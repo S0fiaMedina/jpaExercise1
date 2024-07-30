@@ -5,6 +5,7 @@ package com.jpaexercise.jpaexercise.persistence.entities;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,13 +24,12 @@ public class Question {
     private Long id;
 
     private String questionNumber;
-
     private String questionText;
-
     private String responseType;
-
     private String commentQuestion;
 
+    @Embedded
+    Audit audit = new Audit();  
 
     // rlacion a chapter id
     @ManyToOne( cascade = CascadeType.ALL)

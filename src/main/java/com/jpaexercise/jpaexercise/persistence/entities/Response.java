@@ -5,6 +5,7 @@ import java.sql.Time;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -40,6 +41,10 @@ public class Response {
     // relacion de responsecatalog
     @OneToMany ( mappedBy =  "response")
     private List<ResponseCatalog> responseCatalogs;
+
+    // embebe audit
+    @Embedded
+    Audit audit = new Audit();
 
     public Response() {
     }
@@ -90,6 +95,22 @@ public class Response {
 
     public void setDetailResponses(List<DetailResponse> detailResponses) {
         this.detailResponses = detailResponses;
+    }
+
+    public List<ResponseCatalog> getResponseCatalogs() {
+        return responseCatalogs;
+    }
+
+    public void setResponseCatalogs(List<ResponseCatalog> responseCatalogs) {
+        this.responseCatalogs = responseCatalogs;
+    }
+
+    public Audit getAudit() {
+        return audit;
+    }
+
+    public void setAudit(Audit audit) {
+        this.audit = audit;
     }
 
 
