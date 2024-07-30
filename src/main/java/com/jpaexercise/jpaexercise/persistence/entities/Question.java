@@ -38,7 +38,7 @@ public class Question {
 
     // relacion a parentQuestion
     @ManyToOne (cascade =  CascadeType.ALL)
-    @JoinColumn(name = "parent_question_id", nullable = false)
+    @JoinColumn(name = "parent_question_id", nullable = true)
     private Question questionParent;
 
     // relacion a survey

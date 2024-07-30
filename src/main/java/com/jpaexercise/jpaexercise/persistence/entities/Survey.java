@@ -1,5 +1,4 @@
 package com.jpaexercise.jpaexercise.persistence.entities;
-import com.jpaexercise.jpaexercise.persistence.entities.Response;
 import java.sql.Timestamp;
 import java.util.List;
 
