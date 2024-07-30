@@ -13,7 +13,7 @@ public interface IResponseCatalog {
 
     ResponseCatalog save(ResponseCatalog responseCatalog);
 
-    Optional<ResponseCatalog> update(ResponseCatalog responseCatalog);
+    Optional<ResponseCatalog> update(Long id, ResponseCatalog responseCatalog);
 
     Optional<ResponseCatalog> delete(Long id);
 }

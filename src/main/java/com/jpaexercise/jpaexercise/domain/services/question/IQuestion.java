@@ -12,7 +12,7 @@ public interface IQuestion {
 
     Question save(Question question);
 
-    Optional<Question> update(Question detailResponse);
+    Optional<Question> update(Long id, Question detailResponse);
 
     Optional<Question> delete(Long id);
 }

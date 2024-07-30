@@ -13,7 +13,7 @@ public interface ISurvey {
 
     Survey save(Survey survey);
 
-    Optional<Survey> update(Survey survey);
+    Optional<Survey> update(Long id, Survey survey);
 
     Optional<Survey> delete(Long id);
 }

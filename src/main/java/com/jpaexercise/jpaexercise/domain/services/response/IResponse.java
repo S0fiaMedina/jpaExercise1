@@ -12,7 +12,7 @@ public interface IResponse {
 
     Response save(Response response);
 
-    Optional<Response> update(Response response);
+    Optional<Response> update(Long id, Response response);
 
     Optional<Response> delete(Long id);
 }

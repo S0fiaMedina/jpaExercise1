@@ -12,7 +12,7 @@ public interface IDetailResponse {
 
     DetailResponse save(DetailResponse detailResponse);
 
-    Optional<DetailResponse> update(DetailResponse detailResponse);
+    Optional<DetailResponse> update(Long id, DetailResponse detailResponse);
 
     Optional<DetailResponse> delete(Long id);
 }

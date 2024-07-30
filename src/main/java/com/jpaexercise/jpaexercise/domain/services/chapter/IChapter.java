@@ -14,7 +14,7 @@ public interface IChapter {
 
     Chapter save(Chapter catalog);
 
-    Optional<Chapter> update(Chapter catalog);
+    Optional<Chapter> update(Long id, Chapter catalog);
 
     Optional<Chapter> delete(Long id);
 }
