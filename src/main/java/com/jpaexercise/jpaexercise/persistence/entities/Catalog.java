@@ -41,11 +41,11 @@ public class Catalog {
         this.name = name;
     }
 
-    public List<ResponseCatalog> getResponseCatalog() {
+    public List<ResponseCatalog> getResponseCatalogs() {
         return responseCatalog;
     }
 
-    public void setResponseCatalog(List<ResponseCatalog> responseCatalog) {
+    public void setResponseCatalogs(List<ResponseCatalog> responseCatalog) {
         this.responseCatalog = responseCatalog;
     }
 

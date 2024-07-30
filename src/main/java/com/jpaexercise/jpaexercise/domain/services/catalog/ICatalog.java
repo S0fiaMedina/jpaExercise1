@@ -6,16 +6,13 @@ import java.util.Optional;
 import com.jpaexercise.jpaexercise.persistence.entities.Catalog;
 
 public interface ICatalog {
-
     List<Catalog> findAll();
 
     Optional<Catalog> findById(Long id);
 
     Catalog save(Catalog catalog);
 
-    Optional<Catalog> update(Catalog catalog);
+    Optional<Catalog> update(Long id, Catalog catalog);
 
     Optional<Catalog> delete(Long id);
-
-    
 }
