@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.persistence.Embedded;
 
 
@@ -18,8 +19,10 @@ public class Survey {
     @GeneratedValue( strategy =  GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message =  "la descripcion del formulario {NotEmpty.error}")
     private String description;
 
+    @NotEmpty(message =  "el nombre del formulario {NotEmpty.error}")
     private String name;
 
     @Embedded

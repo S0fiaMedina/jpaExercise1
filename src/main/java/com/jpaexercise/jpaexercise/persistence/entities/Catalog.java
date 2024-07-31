@@ -2,7 +2,6 @@ package com.jpaexercise.jpaexercise.persistence.entities;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

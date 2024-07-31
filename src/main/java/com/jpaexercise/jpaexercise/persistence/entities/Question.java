@@ -14,6 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table (name = "questions")
@@ -23,9 +24,15 @@ public class Question {
     @GeneratedValue ( strategy =  GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message =  "el texto de la pregunta {NotEmpty.error}")
     private String questionNumber;
+
+    @NotEmpty(message =  "el texto de la pregunta {NotEmpty.error}")
     private String questionText;
+
+    @NotEmpty(message =  "el tipo de respuesta {NotEmpty.error}")
     private String responseType;
+
     private String commentQuestion;
 
     @Embedded

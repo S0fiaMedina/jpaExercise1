@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "response_options")
@@ -16,10 +17,12 @@ public class ResponseOption {
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message =  "el texto de la rspuesta {NotEmpty.error}")
     private String optionValue;
 
     private String commentResponse;
-
+    
+    @NotEmpty(message =  "la opcion de la respuesta {NotEmpty.error}")
     private String optionText;
 
     private int questionParent;

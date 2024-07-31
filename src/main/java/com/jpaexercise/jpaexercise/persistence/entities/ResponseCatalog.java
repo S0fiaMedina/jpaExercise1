@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "response_catalogs")
@@ -17,8 +19,11 @@ public class ResponseCatalog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message =  "el texto de la rspuesta {NotEmpty.error}")
     private String responseText;
 
+   
+    @Min(  value =  1, message =  "el numero de la respuesta {NotNegativeErrorNumber.error}")
     private int responseOption;
 
     // relacion hacia atalog

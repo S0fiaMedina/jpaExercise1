@@ -23,9 +23,10 @@ public class Chapter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty (message ="numero del capitulo {NotEmpty.error}")
+    @NotEmpty(  message =  "el numero del capitulo {NotEmpty.error}")
     private String chapterNumber;
 
+    @NotEmpty(message =  "el titulo del capitulo {NotEmpty.error}")
     private String chapterTitle;
 
     // relacion con cuestionarios

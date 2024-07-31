@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table  ( name = "detail_responses")
@@ -17,8 +19,10 @@ public class DetailResponse {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Min( value =  1, message =  "el numero de la opcion de la respuesta {NotNegativeErrorNumber.error}")
     private int responseOption;
 
+    @NotBlank( message =  "el texto de la respuesta {NotEmpty.error}")
     private String responseText;
 
     // relacion a question_id
