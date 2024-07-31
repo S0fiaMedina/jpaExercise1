@@ -2,23 +2,30 @@ package com.jpaexercise.jpaexercise.persistence.entities;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "catalogs")
 public class Catalog {
     
+    // id
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // nombre 
+    @NotEmpty (message ="name de catalogo {NotEmpty.error}")
     private String name;
 
+    // relacion a las respuestas 
     @OneToMany(mappedBy =  "catalog")
     private List<ResponseCatalog> responseCatalog;
 
